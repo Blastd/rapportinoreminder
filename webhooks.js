@@ -7,6 +7,9 @@ class WebhookRapportino{
 
         cron.schedule('0 16 * * MON-FRI', () => {
             myHook.send('IL RAPPORTINO !!!');
+          }, {
+            scheduled: true,
+            timezone: "Europe/Rome"
           });          
     }
 }
