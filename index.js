@@ -2,6 +2,7 @@ const { REST } = require('@discordjs/rest')
 const { Client, Intents } = require('discord.js')
 const { Routes } = require('discord-api-types/v9')
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] })
+const {WebhookRapportino} = require("./webhooks")
 
 const fs = require('fs')
 const path = require('path')
@@ -45,6 +46,10 @@ client.once('ready', () => {
         })
         .catch(console.error)
 })
+
+//Start reminder
+console.log(process.env.W_ID, process.env.W_TOKEN)
+let rapportini = new WebhookRapportino(process.env.W_ID, process.env.W_TOKEN)
 
 client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return
