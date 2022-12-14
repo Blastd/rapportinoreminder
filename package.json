@@ -12,10 +12,10 @@
     "description": "",
     "dependencies": {
         "@discordjs/rest": "^0.5.0",
+        "croner": "^5.3.5",
         "discord-api-types": "^0.36.1",
         "discord.js": "^13.8.1",
-        "dotenv": "^16.0.2",
-        "node-cron": "^3.0.2"
+        "dotenv": "^16.0.2"
     },
     "devDependencies": {
         "@types/node": "^18.11.13",

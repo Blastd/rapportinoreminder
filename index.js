@@ -22,6 +22,8 @@ const token =
 client.once('ready', () => {
     console.log('Bot Ready!')
 
+    let rapportini = new WebhookRapportino(process.env.W_ID, process.env.W_TOKEN)
+
     let commandsFiles = fs.readdirSync(path.join(__dirname, './commands'))
 
     commandsFiles.forEach((file, i) => {
@@ -49,7 +51,6 @@ client.once('ready', () => {
 
 //Start reminder
 console.log(process.env.W_ID, process.env.W_TOKEN)
-let rapportini = new WebhookRapportino(process.env.W_ID, process.env.W_TOKEN)
 
 client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return
